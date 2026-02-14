@@ -1,0 +1,224 @@
+/* ======================================================
+   1. RESET
+====================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Cutive Mono", monospace;
+  letter-spacing: -1.5px; /* make letters more dense horizontally */
+  color: black;
+}
+
+
+/* ======================================================
+   2. GLOBAL / OVERALL STYLES
+   (Applies to all pages unless overridden)
+====================================================== */
+
+/* Layout helpers */
+.page {
+  min-height: 100vh; /* makes the page 100% of screen height */
+  position: relative; /* Allows absolutely positioned children inside it to reference this container. */
+}
+
+/* Header (container that holds name and dropdown) */
+header {
+  position: fixed;
+  top: 0;
+  left: 0; /*anchored left */ 
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  z-index: 100;
+}
+
+.name {
+  font-size: 18px;
+}
+
+.menu-container {
+  position: relative; /*makes dropdown positioning relative to this container */
+}
+
+.menu-toggle {
+  font-size: 24px; /* size of + */
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.dropdown {
+  position: absolute;
+  right: 10px;
+  top: 35px;
+  width: 100%;
+  display: none;
+  text-align: right;
+}
+
+.dropdown.active {
+  display: block;
+}
+
+/* Reset list styling properly */
+.dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown li {
+  margin-bottom: 10px;
+}
+
+/* Links */
+.dropdown a {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+.works-list {
+  margin-top: 10px;
+}
+
+/* Indentation for Work 1/2/3 */
+.works-list li {
+  padding-right: 20px; /* adjust number to control how far right they sit */
+}
+
+
+/* ======================================================
+   3. DESKTOP STYLES
+====================================================== */
+
+
+/* ---------------------
+   INDEX - Desktop
+---------------------- */
+
+.index-page {
+  background-image: url("images/tempbg.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* ---------------------
+   ABOUT - Desktop
+---------------------- */
+
+.about-page {
+  padding: 120px 10%;
+}
+
+
+/* ---------------------
+   WORK 1 - Desktop
+---------------------- */
+
+.work1-page {
+  padding: 120px 10%;
+}
+
+
+/* ---------------------
+   WORK 2 - Desktop
+---------------------- */
+
+.work2-page {
+  padding: 120px 10%;
+}
+
+
+/* ---------------------
+   WORK 3 - Desktop
+---------------------- */
+
+.work3-page {
+  padding: 120px 10%;
+}
+
+
+
+/* ======================================================
+   4. MOBILE STYLES
+====================================================== */
+
+@media (max-width: 768px) {
+
+
+/* ---------------------
+   GLOBAL - Mobile
+---------------------- */
+
+header {
+  padding: 15px;
+}
+
+.name {
+  font-size: 16px;
+}
+
+.menu-toggle {
+  font-size: 22px;
+}
+
+
+/* ---------------------
+   INDEX - Mobile
+---------------------- */
+
+.index-page {
+  background-position: center;
+}
+
+
+/* ---------------------
+   ABOUT - Mobile
+---------------------- */
+
+.about-page {
+  padding: 100px 20px;
+}
+
+
+/* ---------------------
+   WORK 1 - Mobile
+---------------------- */
+
+.work1-page {
+  padding: 100px 20px;
+}
+
+
+/* ---------------------
+   WORK 2 - Mobile
+---------------------- */
+
+.work2-page {
+  padding: 100px 20px;
+}
+
+
+/* ---------------------
+   WORK 3 - Mobile
+---------------------- */
+
+.work3-page {
+  padding: 100px 20px;
+}
+
+}

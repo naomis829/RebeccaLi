@@ -3,31 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Rebecca Li</title>
+  <title>Amulet (2026) – Rebecca Li</title>
 
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
 
-  <!-- Favicon -->
-  <link rel="icon" href="images/tempicon.png" type="image/png">
-
-  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="index-page page">
+<body class="work1-page page">
 
 <header>
-
-  <div class="name">
-    Rebecca Li
-  </div>
+  <div class="name">Rebecca Li</div>
 
   <div class="menu-container">
-
     <button class="menu-toggle">+</button>
 
     <nav class="dropdown">
@@ -39,7 +30,7 @@
         </li>
 
         <li class="works-title">Works
-        <ul class="works-list">
+          <ul class="works-list">
             <li><a href="work1.html">Amulet (2026)</a></li>
             <li><a href="work2.html">Weary Sun (2024)</a></li>
             <li><a href="work3.html">Miscellaneous</a></li>
@@ -49,10 +40,45 @@
         <li><a href="about.html">About</a></li>
       </ul>
     </nav>
+  </div>
+</header>
+
+<main class="work-content">
+
+  <div class="intro-text">
+    <p>
+      Amulet (2026) explores memory, ritual, and protection.
+      The following stills document fragments of the film.
+    </p>
+  </div>
+
+  <div class="image-grid">
+
+    <div class="image-item">
+      <img src="images/tempimg.webp" alt="Still 1">
+      <p class="image-caption">Fragment 1 – Opening ritual scene.</p>
+    </div>
+
+    <div class="image-item">
+      <img src="images/tempimg.webp" alt="Still 2">
+      <p class="image-caption">Fragment 2 – Object detail.</p>
+    </div>
+
+    <!-- Repeat until you have 12 -->
 
   </div>
 
-</header>
+</main>
+
+
+<!-- Modal (desktop popup) -->
+<div id="imageModal" class="modal">
+  <div class="content-wrapper">
+    <img id="modalImg" class="large-image">
+    <div id="modalCaption" class="text-block"></div>
+  </div>
+</div>
+
 
 <script src="script.js"></script>
 

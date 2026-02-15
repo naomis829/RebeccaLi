@@ -12,6 +12,10 @@ html {
   font-size: 16px;
 }
 
+/* ======================================================
+   2. BASE TYPOGRAPHY + COLORS
+====================================================== */
+
 body {
   font-family: "Cutive Mono", monospace;
   letter-spacing: -1px; /* make letters more dense horizontally */
@@ -19,13 +23,18 @@ body {
   background-color: #F7F6F5;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
+
 
 /* ======================================================
-   2. GLOBAL / OVERALL STYLES
-   (Applies to all pages unless overridden)
+   3. LAYOUT
+   (Header, page container, grid systems)
 ====================================================== */
 
-/* Layout helpers */
+/* Page wrapper */
 .page {
   min-height: 100svh; /* makes the page 100% of screen height on small screens */
   min-height: 100vh;/* makes the page 100% of screen height */
@@ -37,7 +46,7 @@ body {
 header {
   position: fixed;
   top: 0;
-  left: 0; /*anchored left */ 
+  left: 0; /* anchored left */ 
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -50,8 +59,26 @@ header {
 }
 
 .menu-container {
-  position: relative; /*makes dropdown positioning relative to this container */
+  position: relative; /* makes dropdown positioning relative to this container */
 }
+
+/* Grid system */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Shared horizontal content padding */
+.content-padding {
+  padding: 0 40px 40px 40px;
+}
+
+/* ======================================================
+   4. COMPONENTS
+   (Reusable UI elements)
+====================================================== */
 
 .menu-toggle {
   font-size: 24px; /* size of + */
@@ -72,6 +99,13 @@ header {
   z-index: 1000;
 }
 
+.dropdown a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;  /* only links get pointer */
+}
+
 .dropdown.active {
   display: block;
 }
@@ -87,14 +121,6 @@ header {
   cursor: default;
 }
 
-/* Links */
-.dropdown a {
-  color: black;
-  text-decoration: none;
-  display: block;
-  cursor: pointer;  /* only links get pointer */
-}
-
 .works-list {
   list-style: none;
   margin-top: 3px;
@@ -105,6 +131,7 @@ header {
   padding: 3px 0;
 }
 
+/* Links */
 .home-link {
   padding: 5px 20px;
 }
@@ -121,10 +148,8 @@ header {
 
 /* work page */
 .intro-text {
-  padding: 0px 40px 40px 40px;  /* top, sides, bottom */
   color: black;
 }
-
 
 .image-item img {
   width: 100%;
@@ -142,7 +167,7 @@ header {
 
 
 /* ======================================================
-   3. DESKTOP STYLES
+   5. PAGE-SPECIFIC STYLES
 ====================================================== */
 
 
@@ -168,7 +193,7 @@ header {
 
 
 /* ---------------------
-   WORK 1 - Desktop
+   WORK - Desktop
 ---------------------- */
 
 .modal {
@@ -185,12 +210,6 @@ header {
   display: flex;
 }
 
-.image-grid {
-  padding: 0 40px 40px 40px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 10px;
-}
 
 .image-item {
   width: 100%;
@@ -202,14 +221,14 @@ header {
 }
 
 /* ======================================================
-   4. MOBILE STYLES
+   4. MOBILE OVERRIDES
 ====================================================== */
 
 @media (max-width: 768px) {
 
 
 /* ---------------------
-   GLOBAL - Mobile
+   LAYOUT - Mobile
 ---------------------- */
 
 header {
@@ -224,12 +243,13 @@ header {
   font-size: 22px;
 }
 
+.image-grid {
+  grid-template-columns: 1fr;
+}
 
-/* ---------------------
-   INDEX - Mobile
----------------------- */
-
-
+.content-padding {
+  padding: 0 10px 20px 10px;
+}
 
 /* ---------------------
    ABOUT - Mobile
@@ -243,10 +263,7 @@ header {
 /* ---------------------
    WORK 1 - Mobile
 ---------------------- */
-.image-grid {
-  grid-template-columns: 1fr;
-  padding: 0 20px 20px 20px; /* slightly smaller padding */
-}
+
 
 .modal {
   display: none;
@@ -254,7 +271,7 @@ header {
 
 .image-caption {
   display: none; /* hide by default */
-  margin: 8px 0;
+  margin: 0 0;
 }
 
 .image-item.active .image-caption {

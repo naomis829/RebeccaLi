@@ -14,9 +14,9 @@ html {
 
 body {
   font-family: "Cutive Mono", monospace;
-  letter-spacing: -1.5px; /* make letters more dense horizontally */
+  letter-spacing: -1px; /* make letters more dense horizontally */
   color: black;
-  background-color: #f5f5f5;
+  background-color: #F7F6F5;
 }
 
 
@@ -27,7 +27,8 @@ body {
 
 /* Layout helpers */
 .page {
-  min-height: 100vh; /* makes the page 100% of screen height */
+  min-height: 100svh; /* makes the page 100% of screen height on small screens */
+  min-height: 100vh;/* makes the page 100% of screen height */
   position: relative; /* Allows absolutely positioned children inside it to reference this container. */
   padding-top: 80px; /* creates space under fixed header */
 }
@@ -124,13 +125,6 @@ header {
   color: black;
 }
 
-.image-grid {
-  padding: 0 40px 80px 40px;
-}
-
-.image-item {
-  margin-bottom: 20px;
-}
 
 .image-item img {
   width: 100%;
@@ -142,9 +136,7 @@ header {
 
 .image-caption {
   display: none;
-  margin-top: 10px;
   font-size: 14px;
-  margin-bottom: 40px;
 }
 
 
@@ -182,7 +174,7 @@ header {
 .modal {
   position: fixed;
   inset: 0;
-  background-color: #f5f5f5; /* pale grey */
+  background-color: #F7F6F5; /* pale grey */
   display: none;
   justify-content: center;
   align-items: center;
@@ -194,17 +186,20 @@ header {
 }
 
 .image-grid {
-  padding: 0 40px 80px 40px;
+  padding: 0 40px 40px 40px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
 }
 
 .image-item {
-  flex: 0 0 auto;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
-
+.image-caption {
+  margin: 10px 0 40px;
+}
 
 /* ======================================================
    4. MOBILE STYLES
@@ -234,9 +229,6 @@ header {
    INDEX - Mobile
 ---------------------- */
 
-.index-page {
-  background-position: center;
-}
 
 
 /* ---------------------
@@ -257,13 +249,12 @@ header {
 }
 
 .modal {
-  display: none !important;
+  display: none;
 }
 
 .image-caption {
   display: none; /* hide by default */
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin: 8px 0;
 }
 
 .image-item.active .image-caption {

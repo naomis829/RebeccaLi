@@ -36,8 +36,7 @@ a {
 
 /* Page wrapper */
 .page {
-  min-height: 100svh; /* makes the page 100% of screen height on small screens */
-  min-height: 100vh;/* makes the page 100% of screen height */
+  min-height: 100dvh;
   position: relative; /* Allows absolutely positioned children inside it to reference this container. */
   padding-top: 80px; /* creates space under fixed header */
 }

@@ -86,6 +86,7 @@ header {
   border: none;
   cursor: pointer;
   font-family: inherit;
+  color: black;  
 }
 
 .dropdown {

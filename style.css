@@ -19,8 +19,18 @@ html {
 body {
   font-family: "Cutive Mono", monospace;
   letter-spacing: -1px; /* make letters more dense horizontally */
+  line-height: 1.5;
   color: black;
   background-color: #F7F6F5;
+}
+
+/* Japanese & Chinese */
+:lang(ja),
+:lang(zh) {
+  font-family: "Noto Serif JP", serif;
+  letter-spacing: 0;   /* remove mono compression */
+  font-size: 0.88em;
+  line-height: 1.5;
 }
 
 a {
@@ -50,8 +60,21 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  z-index: 100;
-}
+  z-index: 100;  
+  mix-blend-mode: difference;
+  isolation: isolate;
+  filter: grayscale(100%) contrast(110%);
+  }
+  
+  header,
+  header a,
+  header button {
+    color: white;
+  }
+
+  .home-link img {
+    filter: invert(1);
+  }
 
 .name {
   font-size: 18px;
@@ -63,9 +86,9 @@ header {
 
 /* Grid system */
 .image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
   margin-top: 10px;
 }
 
@@ -85,7 +108,6 @@ header {
   border: none;
   cursor: pointer;
   font-family: inherit;
-  color: black;  
 }
 
 .dropdown {
@@ -100,7 +122,6 @@ header {
 }
 
 .dropdown a {
-  color: black;
   text-decoration: none;
   display: block;
   cursor: pointer;  /* only links get pointer */
@@ -152,9 +173,8 @@ header {
 }
 
 .image-item img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;   /* always show full image */
+  height: 200px;      /* fixed height */
+  width: auto;        /* width adjusts naturally */
   display: block;
   cursor: pointer;
 }
@@ -180,6 +200,9 @@ header {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  padding-top: 0;
+  height: 100dvh;
 }
 
 
@@ -203,6 +226,7 @@ header {
   display: none;
   justify-content: center;
   align-items: center;
+  padding: 40px;   
   z-index: 2000;
 }
 
@@ -210,14 +234,24 @@ header {
   display: flex;
 }
 
-
-.image-item {
-  width: 100%;
-  margin-bottom: 10px;
+.content-wrapper {
+  display: inline-flex; 
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.image-caption {
-  margin: 10px 0 40px;
+.large-image {
+  max-width: 100%;
+  max-height: 80vh;        /* leaves room for caption */
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+.text-block {
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;        /* align caption left */
 }
 
 /* ======================================================
@@ -252,6 +286,18 @@ header {
 }
 
 /* ---------------------
+   INDEX - Mobile
+---------------------- */
+
+.index-page {
+  height: 100vh; /* fallback */
+  min-height: 100vh; /* ensure it always fills */
+  background-size: cover;   /* crop if needed */
+  background-position: center center; /* keep image centered */
+  background-repeat: no-repeat;
+}
+
+/* ---------------------
    ABOUT - Mobile
 ---------------------- */
 
@@ -276,6 +322,19 @@ header {
 
 .image-item.active .image-caption {
   display: block;
+}
+
+.image-grid {
+  display: block;      /* stop flex layout */
+}
+
+.image-item {
+  margin-bottom: 10px; /* vertical spacing between images */
+}
+
+.image-item img {
+  width: 100%;         /* full screen width */
+  height: auto;        /* keep natural ratio */
 }
 
 }

@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Rebecca Li</title>
+  <title>Miscellaneous – Rebecca Li</title>
 
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,20 +11,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
-  <link rel="icon" href="images/icon.png" type="image/png">
+<link rel="icon" href="images/icon.png" type="image/png">
 
-  <!-- Styles -->
+<!-- Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="index-page page">
+<body class="work1-page page">
 
 <header>
-
   <a href="index.html" class="name">Rebecca Li</a>
 
   <div class="menu-container">
-
     <button class="menu-toggle">+</button>
 
     <nav class="dropdown">
@@ -37,7 +34,7 @@
         </li>
 
         <li class="works-title">Works
-        <ul class="works-list">
+          <ul class="works-list">
             <li><a href="amulet.html">Amulet (2026)</a></li>
             <li><a href="wearysun.html">Weary Sun (2024)</a></li>
             <li><a href="mis.html">Miscellaneous</a></li>
@@ -47,10 +44,48 @@
         <li><a href="about.html">About</a></li>
       </ul>
     </nav>
+  </div>
+</header>
 
+<main class="work-content">
+  <div class="content-padding">
+  <div class="intro-text">
+    <p>
+      Miscellaneous Works<br><br>
+    </p>
   </div>
 
-</header>
+  <div class="image-grid">
+
+    <div class="image-item">
+      <img src="images/miscellaneous/m1.webp" alt="Still 1">
+      <p class="image-caption">Cabbage, oil on linen, 42 x 50 cm (with frame), 2025</p>
+    </div>
+
+    <div class="image-item">
+      <img src="images/miscellaneous/m4.webp" alt="Still 2">
+      <p class="image-caption">Cabbage, oil on linen, 42 x 50 cm (with frame), 2025</p>
+    </div>
+
+    <div class="image-item">
+      <img src="images/miscellaneous/m5.webp" alt="Still 1">
+      <p class="image-caption">Cabbage, oil on linen, 42 x 50 cm (with frame), 2025</p>
+    </div>
+
+  </div>
+  </div>
+
+</main>
+
+
+<!-- Modal (desktop popup) -->
+<div id="imageModal" class="modal">
+  <div class="content-wrapper">
+    <img id="modalImg" class="large-image">
+    <div id="modalCaption" class="text-block"></div>
+  </div>
+</div>
+
 
 <script src="script.js"></script>
 
